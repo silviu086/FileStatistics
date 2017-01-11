@@ -52,7 +52,7 @@ public class FileAdapter extends BaseAdapter {
 
             layout = new LinearLayout(mContext);
             layout.setOrientation(LinearLayout.HORIZONTAL);
-            layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorPrimary));
+            //layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorPrimary));
             textViewSize = new TextView(mContext);
             textViewSize.setTextColor(mContext.getResources().getColor(R.color.colorPrimaryDark));
             textViewSize.setTextSize(15);
@@ -103,6 +103,19 @@ public class FileAdapter extends BaseAdapter {
         int height = 60;
         int width = Functions.getLengthDip(mContext, mListSize.get(position), mFile.getTotalSpace());
         hFile.layout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+        if(width<5){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorGreenLight));
+        }else if(width<15){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorGreen));
+        }else if(width<30){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorOrangeLight));
+        }else if(width<45){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorOrange));
+        }else if(width<60){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorRedLight));
+        }else if(width>60){
+            hFile.layout.setBackgroundColor(mContext.getResources().getColor(R.color.colorRed));
+        }
         hFile.textViewSize.setText(Functions.getReadableSize(mListSize.get(position)));
         if(file.isDirectory()){
             hFile.textViewFiles.setText(String.valueOf(mListDirectoryFiles.get(position)) + " files");

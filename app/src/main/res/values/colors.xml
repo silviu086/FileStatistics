@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorGrayLight">#efefef</color>
     <color name="colorGray">#333333</color>
+    <color name="colorGreenLight">#53af4e</color>
+    <color name="colorGreen">#159f21</color>
+    <color name="colorOrangeLight">#dcad41</color>
+    <color name="colorOrange">#d47d1a</color>
+    <color name="colorRedLight">#dc3254</color>
+    <color name="colorRed">#c42225</color>
 </resources>
